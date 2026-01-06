@@ -4,6 +4,7 @@ DEBUG_MODE=true
 
 if [ "$DEBUG_MODE" == "true" ]; then
 	set -e
+	echo -e "\e[36;1m当前处于DEBUG模式，修改变量DEBUG为false以关闭\e[0m"
 fi
 
 function debug()
@@ -20,7 +21,7 @@ function home_dir()
 	)
 }
 
-ndk_archive_install_url="https://www.github.com/FullError11/android-ndk-r28c-ollvm/releases/download/v1.0/android-ndk-r28c-ollvm.tar.xz"
+ndk_archive_install_url="https://github.com/FullError11/android-ndk-r28c-ollvm/releases/download/v1.0.0/android-ndk-r28c-ollvm.tar.xz"
 debug "ndk_archive_install_url=$ndk_archive_install_url"
 ndk_archive_path="$(home_dir)/archives/android-ndk-r28c-ollvm.tar.xz"
 debug "ndk_archive_path=$ndk_archive_path"
