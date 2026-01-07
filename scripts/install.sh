@@ -26,6 +26,7 @@ debug "ndk_archive_install_url=$ndk_archive_install_url"
 ndk_archive_path="$(home_dir)/archives/android-ndk-r28c-ollvm.tar.xz"
 debug "ndk_archive_path=$ndk_archive_path"
 
+mkdir -p "$ndk_archive_path"
 
 
 function error()
@@ -83,6 +84,11 @@ function main()
 	info "解压完成"
 
 	info "ANDROID_NDK_HOME 应该设置为 $ndk_install_dir/android-ndk-r28c-ollvm"
+
+	info "清理临时文件"
+	rm -rf $ndk_archive_path
+
+	info "完成"
 }
 
 main $@
