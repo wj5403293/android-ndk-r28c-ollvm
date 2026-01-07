@@ -26,7 +26,7 @@ debug "ndk_archive_install_url=$ndk_archive_install_url"
 ndk_archive_path="$(home_dir)/archives/android-ndk-r28c-ollvm.tar.xz"
 debug "ndk_archive_path=$ndk_archive_path"
 
-mkdir -p "$ndk_archive_path"
+mkdir -p "$(dirname "$ndk_archive_path")"
 
 
 function error()
@@ -54,6 +54,7 @@ function main()
 
 	test_command "xz"
 	test_command "tar"
+	test_command "wget"
 
 	info "开始安装 android-ndk-r28c-ollvm"
 
